@@ -1,4 +1,4 @@
-Actual captured unittest output
+Captured unittest output
 Capture started (UTC): 2026-10-03T01:34:02.150158+00:00
 
 > C:\cumberlands\.tools\python\python.exe -m unittest discover -s python -p test_*.py -v

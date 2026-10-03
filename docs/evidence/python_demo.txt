@@ -1,7 +1,7 @@
 Python expense tracker
-Recorded CLI demonstration — actual captured program output
+Recorded CLI demonstration — captured program output
 Working directory: C:\cumberlands\cross-language-expense-tracker
-Data file: isolated temporary file, populated through actual add commands.
+Data file: isolated temporary file, populated through add commands.
 
 > C:\cumberlands\.tools\python\python.exe C:\cumberlands\cross-language-expense-tracker\python\main.py --data C:\Users\psaha\AppData\Local\Temp\expense-tracker-evidence-x2joe533\python-demo.csv add --date 2026-10-02 --amount 12.34 --category Food --description "Lunch, campus"
 Added expense #1.

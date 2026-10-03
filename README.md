@@ -6,7 +6,7 @@ University of the Cumberlands • MSCS632-M30 Advanced Programming Languages •
 **Languages:** Python 3.10+ and C++17  
 **Repository:** https://github.com/psahay101/cross-language-expense-tracker
 
-Two independent command-line applications implement the same expense tracker. They share a validated CSV format, identical functional output, and a behavioral test suite. The project emphasizes language comparison through actual source code rather than different feature sets.
+Two independent command-line applications implement the same expense tracker. They share a validated CSV format, identical functional output, and a behavioral test suite. The project emphasizes language comparison through source code rather than different feature sets.
 
 ## Features
 
@@ -47,7 +47,7 @@ python python/main.py --data data/sample.csv list
 python python/main.py --data data/sample.csv summary
 ```
 
-On Windows, `py` may replace `python`; on macOS/Linux, `python3` may replace it. A supplied portable runtime used for local verification lives outside this repository in `C:\cumberlands\.tools\python` and is not a project dependency.
+On Windows, `py` may replace `python`; on macOS/Linux, `python3` may replace it.
 
 ## Build and run the C++ application
 
@@ -71,7 +71,7 @@ g++ -std=c++17 -O2 -Wall -Wextra -Wpedantic cpp/main.cpp cpp/tracker.cpp -o buil
 ./build/expense_tracker --data data/sample.csv summary
 ```
 
-`clang++` can replace `g++`. Windows MinGW builds may require the compiler's runtime DLLs unless linked statically. The locally supplied Windows executable was built with LLVM-MinGW and `-static`, and imports only Windows system DLLs; its source remains the authoritative submission.
+`clang++` can replace `g++`. Windows MinGW builds may require the compiler's runtime DLLs unless linked statically.
 
 ### Optional CMake build
 
@@ -120,7 +120,7 @@ id,date,amount_cents,category,description
 1,2026-10-02,1234,Food,"Lunch, campus"
 ```
 
-- Dates must be actual calendar dates in `YYYY-MM-DD` format, years `0001`–`9999`.
+- Dates must be valid calendar dates in `YYYY-MM-DD` format, years `0001`–`9999`.
 - Monetary input accepts digits and an optional decimal point followed by one or two digits. Values must be `$0.01`–`$999999999.99`. Signs, exponents, NaN, and excess precision are rejected; no rounding occurs.
 - IDs are unique integers from `1` to `2147483647`; the next ID is the current maximum plus one. After deleting the highest ID, a later record may reuse that ID. Exhaustion produces an error.
 - Categories contain 1–40 printable ASCII characters; descriptions contain 1–200. Leading/trailing ASCII spaces are trimmed on entry, and control characters/non-ASCII input are rejected before trimming.
@@ -154,7 +154,7 @@ python -m unittest discover -s python -p test_tracker.py -v
 python -m unittest discover -s tests -v
 ```
 
-The behavioral suite runs the actual CLI programs, checks both implementations independently, and compares their outputs and shared-file behavior. It includes persistence, exact cents, inclusive filters, search, deletion, CSV quoting, invalid dates/amounts, duplicate flags/IDs, storage corruption without data loss, record limits, and interoperability.
+The behavioral suite runs the CLI programs, checks both implementations independently, and compares their outputs and shared-file behavior. It includes persistence, exact cents, inclusive filters, search, deletion, CSV quoting, invalid dates/amounts, duplicate flags/IDs, storage corruption without data loss, record limits, and interoperability.
 
 For a non-default C++ executable:
 
@@ -167,21 +167,21 @@ python -m unittest discover -s tests -v
 CPP_EXECUTABLE=./build/expense_tracker python3 -m unittest discover -s tests -v
 ```
 
-If the default binary is missing, C++ and parity tests are explicitly skipped; such a run is **not** full verification. An explicitly configured missing binary produces an error. GitHub Actions builds C++ before testing. The locally verified results are recorded under `docs/evidence`.
+If the default binary is missing, C++ and parity tests are explicitly skipped; such a run is **not** full verification. An explicitly configured missing binary produces an error. GitHub Actions builds C++ before testing. Local test results are recorded under `docs/evidence`.
 
 ## Residency deliverables
 
 | Day | Date | Submission |
 |---|---|---|
-| Friday | October 2, 2026 | Detailed initial design, proposed task allocation, and timeline |
+| Friday | October 2, 2026 | Detailed initial design, task allocation, and timeline |
 | Saturday | October 3, 2026 | Core implementation report, screenshots, source, and README |
 | Sunday | October 4, 2026 | APA 7 comparison report and 15–20 minute presentation |
 
-Reports are supplied in Word and PDF. Slides are supplied in PowerPoint and PDF, with speaker assignments and a timed demonstration plan. The documentation distinguishes planned team ownership from observed implementation/test results. The verified public repository URL is included above and in the reports.
+Reports are supplied in Word and PDF. Slides are supplied in PowerPoint and PDF, with speaker assignments and a timed demonstration plan. The public repository URL is included above and in the reports.
 
 ## Collaboration plan
 
-Prateek leads Python implementation and integration coordination; Venkata Sai Makani leads C++ implementation. Both members review each other's code, check equivalent behavior, and share documentation and presentation preparation. These are proposed assignments to confirm against each person's strengths. Use short-lived feature branches, small commits, and peer-reviewed pull requests before merging into `main`.
+Prateek leads Python implementation and integration coordination; Venkata Sai Makani leads C++ implementation. Both members review each other's code, check equivalent behavior, and share documentation and presentation preparation. Use short-lived feature branches, small commits, and peer-reviewed pull requests before merging into `main`.
 
 ## Sources for the language comparison
 

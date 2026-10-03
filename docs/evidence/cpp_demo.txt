@@ -1,7 +1,7 @@
 C++ expense tracker
-Recorded CLI demonstration — actual captured program output
+Recorded CLI demonstration — captured program output
 Working directory: C:\cumberlands\cross-language-expense-tracker
-Data file: isolated temporary file, populated through actual add commands.
+Data file: isolated temporary file, populated through add commands.
 
 > C:\cumberlands\cross-language-expense-tracker\build\expense_tracker.exe --data C:\Users\psaha\AppData\Local\Temp\expense-tracker-evidence-x2joe533\c++-demo.csv add --date 2026-10-02 --amount 12.34 --category Food --description "Lunch, campus"
 Added expense #1.
