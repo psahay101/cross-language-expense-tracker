@@ -1,0 +1,80 @@
+Actual captured unittest output
+Capture started (UTC): 2026-10-03T01:34:02.150158+00:00
+
+> C:\cumberlands\.tools\python\python.exe -m unittest discover -s python -p test_*.py -v
+test_corrupt_storage_is_rejected_without_changes (test_tracker.PersistenceTests.test_corrupt_storage_is_rejected_without_changes) ... ok
+test_failed_replacement_keeps_original_and_cleans_temporary (test_tracker.PersistenceTests.test_failed_replacement_keeps_original_and_cleans_temporary) ... ok
+test_missing_file_and_quoted_round_trip (test_tracker.PersistenceTests.test_missing_file_and_quoted_round_trip) ... ok
+test_calendar_validation (test_tracker.ValidationTests.test_calendar_validation) ... ok
+test_dictionary_records_filters_and_integer_totals (test_tracker.ValidationTests.test_dictionary_records_filters_and_integer_totals) ... ok
+test_exact_decimal_currency_and_boundaries (test_tracker.ValidationTests.test_exact_decimal_currency_and_boundaries) ... ok
+test_invalid_text_and_exhausted_ids_do_not_mutate (test_tracker.ValidationTests.test_invalid_text_and_exhausted_ids_do_not_mutate) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.025s
+
+OK
+[exit 0]
+
+> C:\cumberlands\.tools\python\python.exe -m unittest discover -s tests -v
+test_add_persists_and_new_process_reads (test_tracker.TestCpp.test_add_persists_and_new_process_reads) ... ok
+test_category_summary_is_sorted_and_filtered (test_tracker.TestCpp.test_category_summary_is_sorted_and_filtered) ... ok
+test_decimal_amounts_are_exact (test_tracker.TestCpp.test_decimal_amounts_are_exact) ... ok
+test_default_data_location (test_tracker.TestCpp.test_default_data_location) ... ok
+test_delete_persists_and_missing_id_does_not_rewrite (test_tracker.TestCpp.test_delete_persists_and_missing_id_does_not_rewrite) ... ok
+test_duplicate_ids_are_rejected_without_rewriting (test_tracker.TestCpp.test_duplicate_ids_are_rejected_without_rewriting) ... ok
+test_empty_list_and_summary (test_tracker.TestCpp.test_empty_list_and_summary) ... ok
+test_identifier_limit_remains_readable_but_cannot_add (test_tracker.TestCpp.test_identifier_limit_remains_readable_but_cannot_add) ... ok
+test_inclusive_date_range_and_combined_filter (test_tracker.TestCpp.test_inclusive_date_range_and_combined_filter) ... ok
+test_insertion_order_not_date_order (test_tracker.TestCpp.test_insertion_order_not_date_order) ... ok
+test_integer_and_one_decimal_amounts (test_tracker.TestCpp.test_integer_and_one_decimal_amounts) ... ok
+test_invalid_amounts_do_not_rewrite (test_tracker.TestCpp.test_invalid_amounts_do_not_rewrite) ... ok
+test_invalid_calendar_dates_do_not_rewrite (test_tracker.TestCpp.test_invalid_calendar_dates_do_not_rewrite) ... ok
+test_invalid_filters_and_arguments (test_tracker.TestCpp.test_invalid_filters_and_arguments) ... ok
+test_invalid_search_queries_do_not_rewrite (test_tracker.TestCpp.test_invalid_search_queries_do_not_rewrite) ... ok
+test_invalid_stored_values_are_rejected (test_tracker.TestCpp.test_invalid_stored_values_are_rejected) ... ok
+test_malformed_csv_is_rejected_without_rewriting (test_tracker.TestCpp.test_malformed_csv_is_rejected_without_rewriting) ... ok
+test_maximum_amount_and_wide_summary (test_tracker.TestCpp.test_maximum_amount_and_wide_summary) ... ok
+test_one_sided_filters_and_exact_category (test_tracker.TestCpp.test_one_sided_filters_and_exact_category) ... ok
+test_quoted_csv_and_trimmed_text_round_trip (test_tracker.TestCpp.test_quoted_csv_and_trimmed_text_round_trip) ... ok
+test_record_limit_is_enforced (test_tracker.TestCpp.test_record_limit_is_enforced) ... ok
+test_search_matches_description_and_category_case_insensitively (test_tracker.TestCpp.test_search_matches_description_and_category_case_insensitively) ... ok
+test_summary_applies_date_filter (test_tracker.TestCpp.test_summary_applies_date_filter) ... ok
+test_text_limits_and_ascii_validation (test_tracker.TestCpp.test_text_limits_and_ascii_validation) ... ok
+test_valid_calendar_boundaries (test_tracker.TestCpp.test_valid_calendar_boundaries) ... ok
+test_both_refuse_corrupted_shared_storage (test_tracker.TestCrossLanguage.test_both_refuse_corrupted_shared_storage) ... ok
+test_cpp_python_cpp_csv_interoperability (test_tracker.TestCrossLanguage.test_cpp_python_cpp_csv_interoperability) ... ok
+test_empty_output_parity (test_tracker.TestCrossLanguage.test_empty_output_parity) ... ok
+test_filter_search_and_summary_output_parity (test_tracker.TestCrossLanguage.test_filter_search_and_summary_output_parity) ... ok
+test_python_cpp_python_csv_interoperability (test_tracker.TestCrossLanguage.test_python_cpp_python_csv_interoperability) ... ok
+test_add_persists_and_new_process_reads (test_tracker.TestPython.test_add_persists_and_new_process_reads) ... ok
+test_category_summary_is_sorted_and_filtered (test_tracker.TestPython.test_category_summary_is_sorted_and_filtered) ... ok
+test_decimal_amounts_are_exact (test_tracker.TestPython.test_decimal_amounts_are_exact) ... ok
+test_default_data_location (test_tracker.TestPython.test_default_data_location) ... ok
+test_delete_persists_and_missing_id_does_not_rewrite (test_tracker.TestPython.test_delete_persists_and_missing_id_does_not_rewrite) ... ok
+test_duplicate_ids_are_rejected_without_rewriting (test_tracker.TestPython.test_duplicate_ids_are_rejected_without_rewriting) ... ok
+test_empty_list_and_summary (test_tracker.TestPython.test_empty_list_and_summary) ... ok
+test_identifier_limit_remains_readable_but_cannot_add (test_tracker.TestPython.test_identifier_limit_remains_readable_but_cannot_add) ... ok
+test_inclusive_date_range_and_combined_filter (test_tracker.TestPython.test_inclusive_date_range_and_combined_filter) ... ok
+test_insertion_order_not_date_order (test_tracker.TestPython.test_insertion_order_not_date_order) ... ok
+test_integer_and_one_decimal_amounts (test_tracker.TestPython.test_integer_and_one_decimal_amounts) ... ok
+test_invalid_amounts_do_not_rewrite (test_tracker.TestPython.test_invalid_amounts_do_not_rewrite) ... ok
+test_invalid_calendar_dates_do_not_rewrite (test_tracker.TestPython.test_invalid_calendar_dates_do_not_rewrite) ... ok
+test_invalid_filters_and_arguments (test_tracker.TestPython.test_invalid_filters_and_arguments) ... ok
+test_invalid_search_queries_do_not_rewrite (test_tracker.TestPython.test_invalid_search_queries_do_not_rewrite) ... ok
+test_invalid_stored_values_are_rejected (test_tracker.TestPython.test_invalid_stored_values_are_rejected) ... ok
+test_malformed_csv_is_rejected_without_rewriting (test_tracker.TestPython.test_malformed_csv_is_rejected_without_rewriting) ... ok
+test_maximum_amount_and_wide_summary (test_tracker.TestPython.test_maximum_amount_and_wide_summary) ... ok
+test_one_sided_filters_and_exact_category (test_tracker.TestPython.test_one_sided_filters_and_exact_category) ... ok
+test_quoted_csv_and_trimmed_text_round_trip (test_tracker.TestPython.test_quoted_csv_and_trimmed_text_round_trip) ... ok
+test_record_limit_is_enforced (test_tracker.TestPython.test_record_limit_is_enforced) ... ok
+test_search_matches_description_and_category_case_insensitively (test_tracker.TestPython.test_search_matches_description_and_category_case_insensitively) ... ok
+test_summary_applies_date_filter (test_tracker.TestPython.test_summary_applies_date_filter) ... ok
+test_text_limits_and_ascii_validation (test_tracker.TestPython.test_text_limits_and_ascii_validation) ... ok
+test_valid_calendar_boundaries (test_tracker.TestPython.test_valid_calendar_boundaries) ... ok
+
+----------------------------------------------------------------------
+Ran 55 tests in 16.021s
+
+OK
+[exit 0]

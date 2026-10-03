@@ -1,0 +1,10 @@
+build/
+__pycache__/
+*.py[cod]
+.venv/
+data/*.csv
+!data/sample.csv
+*.tmp
+*.log
+.DS_Store
+Thumbs.db

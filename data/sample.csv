@@ -1,0 +1,6 @@
+id,date,amount_cents,category,description
+1,2026-10-02,1234,Food,"Lunch, campus"
+2,2026-10-02,500,Transport,Bus ticket
+3,2026-10-03,1999,Supplies,Notebook and pens
+4,2026-10-03,875,Food,Coffee and breakfast
+5,2026-10-04,1500,Transport,Trip to campus

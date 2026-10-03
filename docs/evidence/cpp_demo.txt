@@ -1,0 +1,62 @@
+C++ expense tracker
+Recorded CLI demonstration — actual captured program output
+Working directory: C:\cumberlands\cross-language-expense-tracker
+Data file: isolated temporary file, populated through actual add commands.
+
+> C:\cumberlands\cross-language-expense-tracker\build\expense_tracker.exe --data C:\Users\psaha\AppData\Local\Temp\expense-tracker-evidence-x2joe533\c++-demo.csv add --date 2026-10-02 --amount 12.34 --category Food --description "Lunch, campus"
+Added expense #1.
+[exit 0]
+
+> C:\cumberlands\cross-language-expense-tracker\build\expense_tracker.exe --data C:\Users\psaha\AppData\Local\Temp\expense-tracker-evidence-x2joe533\c++-demo.csv add --date 2026-10-02 --amount 5.00 --category Transport --description "Bus ticket"
+Added expense #2.
+[exit 0]
+
+> C:\cumberlands\cross-language-expense-tracker\build\expense_tracker.exe --data C:\Users\psaha\AppData\Local\Temp\expense-tracker-evidence-x2joe533\c++-demo.csv add --date 2026-10-03 --amount 19.99 --category Supplies --description "Notebook and pens"
+Added expense #3.
+[exit 0]
+
+> C:\cumberlands\cross-language-expense-tracker\build\expense_tracker.exe --data C:\Users\psaha\AppData\Local\Temp\expense-tracker-evidence-x2joe533\c++-demo.csv add --date 2026-10-03 --amount 8.75 --category Food --description "Coffee and breakfast"
+Added expense #4.
+[exit 0]
+
+> C:\cumberlands\cross-language-expense-tracker\build\expense_tracker.exe --data C:\Users\psaha\AppData\Local\Temp\expense-tracker-evidence-x2joe533\c++-demo.csv add --date 2026-10-04 --amount 15.00 --category Transport --description "Trip to campus"
+Added expense #5.
+[exit 0]
+
+> C:\cumberlands\cross-language-expense-tracker\build\expense_tracker.exe --data C:\Users\psaha\AppData\Local\Temp\expense-tracker-evidence-x2joe533\c++-demo.csv list
+ID | Date | Amount (USD) | Category | Description
+1 | 2026-10-02 | $12.34 | Food | Lunch, campus
+2 | 2026-10-02 | $5.00 | Transport | Bus ticket
+3 | 2026-10-03 | $19.99 | Supplies | Notebook and pens
+4 | 2026-10-03 | $8.75 | Food | Coffee and breakfast
+5 | 2026-10-04 | $15.00 | Transport | Trip to campus
+[exit 0]
+
+> C:\cumberlands\cross-language-expense-tracker\build\expense_tracker.exe --data C:\Users\psaha\AppData\Local\Temp\expense-tracker-evidence-x2joe533\c++-demo.csv list --start 2026-10-03 --end 2026-10-04 --category Food
+ID | Date | Amount (USD) | Category | Description
+4 | 2026-10-03 | $8.75 | Food | Coffee and breakfast
+[exit 0]
+
+> C:\cumberlands\cross-language-expense-tracker\build\expense_tracker.exe --data C:\Users\psaha\AppData\Local\Temp\expense-tracker-evidence-x2joe533\c++-demo.csv summary --start 2026-10-03 --end 2026-10-04 --category Food
+Category | Total (USD)
+Food | $8.75
+Overall | $8.75
+[exit 0]
+
+> C:\cumberlands\cross-language-expense-tracker\build\expense_tracker.exe --data C:\Users\psaha\AppData\Local\Temp\expense-tracker-evidence-x2joe533\c++-demo.csv search --query CAMPUS
+ID | Date | Amount (USD) | Category | Description
+1 | 2026-10-02 | $12.34 | Food | Lunch, campus
+5 | 2026-10-04 | $15.00 | Transport | Trip to campus
+[exit 0]
+
+> C:\cumberlands\cross-language-expense-tracker\build\expense_tracker.exe --data C:\Users\psaha\AppData\Local\Temp\expense-tracker-evidence-x2joe533\c++-demo.csv summary
+Category | Total (USD)
+Food | $21.09
+Supplies | $19.99
+Transport | $20.00
+Overall | $61.08
+[exit 0]
+
+> C:\cumberlands\cross-language-expense-tracker\build\expense_tracker.exe --data C:\Users\psaha\AppData\Local\Temp\expense-tracker-evidence-x2joe533\c++-demo.csv add --date 2026-02-30 --amount 1.00 --category Food --description "Invalid date test"
+Error: Date must be a valid calendar date in YYYY-MM-DD format.
+[exit 2]

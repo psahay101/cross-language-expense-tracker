@@ -1,0 +1,26 @@
+name: Python and C++ parity
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Compile C++17 with warnings enabled
+        run: |
+          mkdir -p build
+          g++ -std=c++17 -Wall -Wextra -Wpedantic cpp/main.cpp cpp/tracker.cpp -o build/expense_tracker
+      - name: Run Python validation and atomic-save unit tests
+        run: python -m unittest discover -s python -p 'test_*.py' -v
+      - name: Run behavioral, persistence, and cross-language parity tests
+        run: python -m unittest discover -s tests -v

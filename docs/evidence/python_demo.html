@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Python | Recorded CLI demonstration</title>
+<style>
+* { box-sizing: border-box; }
+body { margin: 0; padding: 12px; background: #e8edf3; font-family: Arial, sans-serif; }
+main { width: 1176px; max-width: 100%; margin: 0 auto; background: #101827; color: #e2e8f0; border-radius: 12px; overflow: hidden; }
+header { padding: 15px 20px; background: #182438; border-bottom: 1px solid #314258; }
+h1 { margin: 0 0 5px; color: #ffffff; font-size: 25px; line-height: 1.15; }
+header p { margin: 0; color: #b9c9dd; font-size: 15px; line-height: 1.3; }
+.panels { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: #314258; }
+section { min-width: 0; padding: 15px; background: #101827; }
+h2 { margin: 0 0 11px; color: #b9c9dd; font-size: 17px; font-weight: 600; }
+pre { margin: 0; white-space: pre-wrap; overflow-wrap: anywhere; color: #def3e7; font-family: Consolas, "Liberation Mono", monospace; font-size: 19px; line-height: 1.30; }
+footer { padding: 11px 20px; border-top: 1px solid #314258; color: #a9bbd1; font-size: 13px; line-height: 1.35; }
+</style></head><body><main>
+<header><h1>Python | Recorded CLI demonstration</h1><p>Selected actual captured program output</p></header>
+<div class="panels"><section><h2>All expenses and invalid-date rejection</h2><pre>&gt; list
+ID | Date | Amount (USD) | Category | Description
+1 | 2026-10-02 | $12.34 | Food | Lunch, campus
+2 | 2026-10-02 | $5.00 | Transport | Bus ticket
+3 | 2026-10-03 | $19.99 | Supplies | Notebook and pens
+4 | 2026-10-03 | $8.75 | Food | Coffee and breakfast
+5 | 2026-10-04 | $15.00 | Transport | Trip to campus
+
+&gt; add --date 2026-02-30 ...
+Error: Date must be a valid calendar date.
+[exit 2]</pre></section><section><h2>Totals, combined filter, and search</h2><pre>&gt; summary
+Category | Total (USD)
+Food | $21.09
+Supplies | $19.99
+Transport | $20.00
+Overall | $61.08
+
+&gt; list --start 2026-10-03 --end 2026-10-04 --category Food
+ID | Date | Amount (USD) | Category | Description
+4 | 2026-10-03 | $8.75 | Food | Coffee and breakfast
+
+&gt; search --query CAMPUS
+ID | Date | Amount (USD) | Category | Description
+1 | 2026-10-02 | $12.34 | Food | Lunch, campus
+5 | 2026-10-04 | $15.00 | Transport | Trip to campus</pre></section></div>
+<footer>Commands are abbreviated; executable/data paths and remaining invalid-add arguments are omitted. Full commands, all five add operations, and unchanged output are retained in companion .txt and evidence_results.json.</footer></main></body></html>
