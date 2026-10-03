@@ -1,0 +1,22 @@
+Python expense tracker: add and delete
+Recorded CLI demonstration — captured program output
+Working directory: C:\cumberlands\cross-language-expense-tracker
+Data file: data/python-demo.csv, created by the add command and removed after the demonstration.
+
+PS C:\cumberlands\cross-language-expense-tracker>
+python python/main.py --data data/python-demo.csv add --date 2026-10-03 --amount 45.00 --category Books --description "Textbook, used"
+Added expense #1.
+
+PS C:\cumberlands\cross-language-expense-tracker>
+python python/main.py --data data/python-demo.csv list
+ID | Date | Amount (USD) | Category | Description
+1 | 2026-10-03 | $45.00 | Books | Textbook, used
+
+PS C:\cumberlands\cross-language-expense-tracker>
+python python/main.py --data data/python-demo.csv delete --id 1
+Deleted expense #1.
+
+PS C:\cumberlands\cross-language-expense-tracker>
+python python/main.py --data data/python-demo.csv list
+ID | Date | Amount (USD) | Category | Description
+(no expenses)
