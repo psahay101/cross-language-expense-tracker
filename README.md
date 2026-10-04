@@ -175,7 +175,7 @@ If the default binary is missing, C++ and parity tests are explicitly skipped; s
 |---|---|---|
 | Friday | October 2, 2026 | Detailed initial design, task allocation, and timeline |
 | Saturday | October 3, 2026 | Core implementation report, screenshots, source, and README |
-| Sunday | October 4, 2026 | APA 7 comparison report and 15–20 minute presentation |
+| Sunday | October 4, 2026 | APA 7 comparison report and 10-slide, 10-minute presentation |
 
 Reports are supplied in Word and PDF. Slides are supplied in PowerPoint and PDF, with speaker assignments and a timed demonstration plan. The public repository URL is included above and in the reports.
 

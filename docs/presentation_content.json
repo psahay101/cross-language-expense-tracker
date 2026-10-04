@@ -1,0 +1,123 @@
+{
+  "title": "Expense Tracker: Python and C++",
+  "repository_url": "https://github.com/psahay101/cross-language-expense-tracker",
+  "authors": ["Prateek Sahay", "Venkata Sai Makani"],
+  "slides": [
+    {
+      "title": "Expense Tracker",
+      "subtitle": "The same app, built in Python and C++",
+      "layout": "title",
+      "speaker": "Prateek Sahay",
+      "duration_seconds": 60,
+      "notes": "Hi, I am Prateek Sahay, and my teammate is Venkata Sai Makani. Our project is an expense tracker written in two languages: Python and C++. The app helps someone record purchases and understand where their money goes. We kept the features the same in both versions so we could compare how the languages handle the same problem. It runs in a terminal, where the user types a command and sees a result. Today we will explain the features, show both versions, look at one small code example, and share what we learned. I will cover the first half, and Venkata will cover the second half."
+    },
+    {
+      "title": "What can the app do?",
+      "subtitle": "A simple way to record and review everyday spending",
+      "layout": "features",
+      "cards": [
+        {"title": "Add an expense", "body": "Date, amount, category, and description"},
+        {"title": "Find an expense", "body": "View the list or search by a word"},
+        {"title": "Filter the list", "body": "Choose a date range or a category"},
+        {"title": "See totals", "body": "Spending by category and overall"}
+      ],
+      "speaker": "Prateek Sahay",
+      "duration_seconds": 60,
+      "notes": "The app has four main features. First, we can add an expense with a date, an amount, a category, and a short description. Second, we can view all saved expenses or search for a word in the category or description. Third, we can narrow the list to a date range or a category, such as Food. Finally, we can calculate spending for each category and the total for all expenses. We also added a delete option so a user can remove an entry by its ID. The data is saved, so closing and reopening the app does not lose the records. Both languages support these same features."
+    },
+    {
+      "title": "A simple example",
+      "subtitle": "Start with one everyday purchase",
+      "layout": "example",
+      "steps": ["Record a lunch purchase", "Find expenses in Food", "See how much was spent"],
+      "speaker": "Prateek Sahay",
+      "duration_seconds": 60,
+      "notes": "Imagine buying lunch on October 2 for 12 dollars and 34 cents. We enter the date, choose Food as the category, and use Lunch, campus as the description. The app creates an ID so we can refer to that entry later. If we want to review only food spending, we filter by Food. If we want to find campus purchases, we search for campus. We can also limit the results to a date range. Then the summary adds the matching amounts. The steps are identical in Python and C++, which makes it easy to compare the results without learning two different sets of commands."
+    },
+    {
+      "title": "How are expenses saved?",
+      "subtitle": "Both versions use the same file format",
+      "layout": "storage",
+      "cards": [
+        {"title": "Enter an expense", "body": "The app checks the date, amount, and text."},
+        {"title": "Save a CSV file", "body": "A plain text file with rows and columns."},
+        {"title": "Open it later", "body": "Either version can read the saved expenses."}
+      ],
+      "speaker": "Prateek Sahay",
+      "duration_seconds": 60,
+      "notes": "We save the expenses in a CSV file. CSV is a simple text format with columns separated by commas. Each row contains an ID, date, amount, category, and description. Both versions use the same columns, so Python can read a file saved by C++, and C++ can read a file saved by Python. We store money as whole cents: 12 dollars and 34 cents becomes 1,234 cents. That keeps the calculations exact instead of relying on decimal approximations. Before saving, the app checks the input. It also writes a replacement file before replacing the original, which helps protect the existing records if saving fails."
+    },
+    {
+      "title": "Python: see it working",
+      "subtitle": "View the saved expenses and calculate totals",
+      "layout": "demo",
+      "language": "Python",
+      "output": "Category | Total (USD)\nFood | $21.09\nSupplies | $19.99\nTransport | $20.00\nOverall | $61.08",
+      "points": ["5 sample expenses", "Food total: $21.09", "Overall total: $61.08"],
+      "speaker": "Prateek Sahay",
+      "duration_seconds": 60,
+      "notes": "This is the output from the Python version using our five sample expenses. The overall total is 61 dollars and 8 cents, and Food spending is 21 dollars and 9 cents. For a short live demonstration, run the list command to show the entries, then the summary command to show these totals. Point out that the categories and amounts come from the saved file. The output on this slide is recorded program output, so it can be used if a live demonstration is unavailable. Python can run the source file through the installed Python program without a separate compile step. Venkata will now show the same sample in C++.",
+      "demo_commands": [
+        "python python/main.py --data data/sample.csv list",
+        "python python/main.py --data data/sample.csv summary"
+      ]
+    },
+    {
+      "title": "C++: the same results",
+      "subtitle": "A separate program reads the same sample file",
+      "layout": "demo",
+      "language": "C++",
+      "output": "Category | Total (USD)\nFood | $21.09\nSupplies | $19.99\nTransport | $20.00\nOverall | $61.08",
+      "points": ["Same saved expenses", "Same category totals", "Same overall $61.08"],
+      "speaker": "Venkata Sai Makani",
+      "duration_seconds": 60,
+      "notes": "I am Venkata, and this is the C++ version. We build the C++ source into an executable first, then run it. I will use the same sample file that Prateek showed. The list contains the same expenses, and the summary gives the same category totals and the same overall amount: 61 dollars and 8 cents. These are two separate programs; the C++ app does not call the Python app. They agree because we designed the same behavior and the same saved-file format. The slide shows recorded output from the C++ program. If doing a live demo, show list and summary, then return to the slides to compare the code.",
+      "demo_commands": [
+        ".\\build\\expense_tracker.exe --data data/sample.csv list",
+        ".\\build\\expense_tracker.exe --data data/sample.csv summary"
+      ]
+    },
+    {
+      "title": "One clear code difference",
+      "subtitle": "Both records have the same fields",
+      "layout": "code",
+      "python_code": "class Expense(TypedDict):\n    id: int\n    date: date\n    amount_cents: int\n    category: str\n    description: str",
+      "cpp_code": "struct Expense {\n    std::int32_t id;\n    std::string date;\n    std::int64_t amount_cents;\n    std::string category;\n    std::string description;\n};",
+      "speaker": "Venkata Sai Makani",
+      "duration_seconds": 60,
+      "notes": "These small examples come directly from our source files. Both name the same five fields: ID, date, amount in cents, category, and description. In Python, an expense is a dictionary, which means values are stored under named labels. TypedDict describes the expected values for those labels. Those hints do not automatically check user input, so our validation functions do that work. In C++, a struct groups the fields into a record, and each field has a declared type, such as a number or text. The compiler checks the declared field types when building the program. C++ still needs input validation. Different code styles represent the same expense."
+    },
+    {
+      "title": "What felt different?",
+      "subtitle": "Our choices while building this project",
+      "layout": "comparison",
+      "rows": [
+        ["Starting the app", "Run using Python", "Compile, then run"],
+        ["Expense records", "Named fields with type hints", "Fields with fixed types"],
+        ["Dates and CSV files", "Built-in tools helped", "More code written by us"],
+        ["Organizing the code", "Separate functions", "A Tracker class groups operations"]
+      ],
+      "speaker": "Venkata Sai Makani",
+      "duration_seconds": 60,
+      "notes": "For this project, Python was convenient for making quick changes and running them immediately. Its built-in date and CSV tools reduced the amount of code we needed to write. C++ needed a build step, and we wrote more code for date checks and reading CSV files. Its explicit field types made the record structure clear and helped catch type mistakes during compilation. Python uses separate functions for operations such as adding and filtering. C++ groups related operations inside a Tracker class. A class is simply a way to keep related data and operations together. Both approaches worked. These are observations about our implementations, not measurements of which language runs faster."
+    },
+    {
+      "title": "How did we check it?",
+      "subtitle": "62 tests passed in our recorded verification run",
+      "layout": "testing",
+      "points": ["Totals, searches, and date filters", "Invalid dates and amounts", "Saved files used by both versions"],
+      "speaker": "Venkata Sai Makani",
+      "duration_seconds": 60,
+      "notes": "We used automated checks to confirm that the apps work as expected. Our recorded verification run passed 62 tests: 7 focused Python checks and 55 checks for behavior and file sharing across the two versions. We checked exact totals, date ranges, category filters, search, adding and deleting records, and reopening saved files. We also tried bad input, such as an impossible date or an amount with too many decimal places. The app should report a clear error and preserve the valid data. Finally, we checked that each program can read files written by the other. Matching a screenshot once is helpful, but checking many cases gives us more confidence."
+    },
+    {
+      "title": "What we learned",
+      "subtitle": "Same features. Different ways to write the code.",
+      "layout": "closing",
+      "points": ["Python made quick changes convenient.", "C++ made field types and structure explicit.", "Both versions use the same files and give the same results."],
+      "speaker": "Venkata Sai Makani",
+      "duration_seconds": 60,
+      "notes": "The main lesson is that we can solve the same problem in different ways. Python helped us move quickly with built-in tools and simple functions. C++ encouraged us to define the record structure clearly and build the program before running it. In both versions, good input checks, exact money calculations, and clear organization mattered. Keeping the features and storage format the same made the comparison useful because we could focus on the code choices. The GitHub repository contains the source, sample data, tests, and instructions for running both programs. Thank you for listening. We are happy to answer questions or show one of the commands again."
+    }
+  ]
+}
